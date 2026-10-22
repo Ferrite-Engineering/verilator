@@ -172,8 +172,10 @@ class V3DiagSarifImp final {
             of.begin("artifactChanges", '[').begin();
             putArtifactLocation(of, fl);
             of.begin("replacements", '[');
-            putInsertion(of, firstLine, indent + "/* verilator lint_off " + code.ascii() + " */\n");
-            putInsertion(of, lastLine + 1, indent + "/* verilator lint_on " + code.ascii() + " */\n");
+            putInsertion(of, firstLine,
+                         indent + "/* verilator lint_off " + code.ascii() + " */\n");
+            putInsertion(of, lastLine + 1,
+                         indent + "/* verilator lint_on " + code.ascii() + " */\n");
             of.end();  // replacements
             of.end();  // artifactChange
             of.end();  // artifactChanges
