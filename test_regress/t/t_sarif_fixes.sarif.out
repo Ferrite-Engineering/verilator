@@ -75,11 +75,4 @@
                 {
                     "level": "error",
                     "message": {
-                        "text": "Exiting due to 1 error(s)",
-                        "markdown": "```\n%Error: Exiting due to 1 error(s)\n\n```\n"
-                    }
-                }
-            ]
-        }
-    ]
-}
+                        "text": "Exiting due to
