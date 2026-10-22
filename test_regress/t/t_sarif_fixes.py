@@ -18,10 +18,10 @@ sarif_filename = test.obj_dir + "/" + test.vm_prefix + ".sarif"
 # Make sure V3Error meta comments aren't in any outputs
 test.file_grep_not(sarif_filename, r'__WARN')
 
-# Fixes: spelling suggestion, and lint_off/lint_on around the warned line
+# Fixes: spelling suggestion (the lint_off/lint_on fixes are covered by t_sarif)
 test.file_grep(sarif_filename, r'"fixes"')
 test.file_grep(sarif_filename, r'"text": "Replace \'foobat\' with \'foobar\'"')
-test.file_grep(sarif_filename, r'/\* verilator lint_off WIDTHTRUNC \*/')
+test.file_grep_not(sarif_filename, r'lint_off')
 
 test.files_identical(sarif_filename, "t/" + test.name + ".sarif.out", "logfile")
 

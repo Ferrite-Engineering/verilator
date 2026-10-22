@@ -7,8 +7,6 @@
 module t;
   reg foobar;
 
-  wire [1:0] trunced = 5'b11111;  // Warned
-
   initial begin
     if (foobat) $stop;  // Misspelt
   end
